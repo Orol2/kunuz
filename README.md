@@ -1,14 +1,14 @@
 # Kun.uz News Scraper
 
-A modern, responsive Next.js application that scrapes and displays the latest news articles from [kun.uz](https://kun.uz), Uzbekistan's leading news portal. Built with Next.js 14, TypeScript, and Tailwind CSS, optimized for deployment on AWS Amplify.
+A modern, responsive Next.js application that scrapes and displays the latest news articles from [kun.uz](https://kun.uz), Uzbekistan's leading news portal. Built with Next.js 15, TypeScript, and Tailwind CSS, optimized for deployment on AWS Amplify.
 
-![Next.js](https://img.shields.io/badge/Next.js-14.2-black)
+![Next.js](https://img.shields.io/badge/Next.js-15.5-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)
 
 ## Features
 
-- 🚀 **Next.js 14 App Router** - Modern React framework with server-side rendering
+- 🚀 **Next.js 15 App Router** - Modern React framework with server-side rendering
 - 📰 **Real-time News Scraping** - Fetches latest articles from kun.uz
 - 🎨 **Beautiful UI** - Clean, responsive card-based layout with Tailwind CSS
 - ⚡ **Performance Optimized** - Caching, lazy loading, and optimized images
@@ -17,10 +17,11 @@ A modern, responsive Next.js application that scrapes and displays the latest ne
 - 🛡️ **Error Handling** - Graceful error messages and loading states
 - 🌐 **SEO Optimized** - Meta tags and Open Graph support
 - ☁️ **AWS Amplify Ready** - Configured for seamless deployment
+- 🔒 **Security** - Updated to Next.js 15.5.11 to address critical vulnerabilities
 
 ## Tech Stack
 
-- **Framework**: Next.js 14.2 (App Router)
+- **Framework**: Next.js 15.5 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Scraping**: Cheerio & Axios
@@ -271,6 +272,11 @@ Edit `app/page.tsx` to customize:
 
 ## Security & Best Practices
 
+- ✅ **Updated Dependencies** - Next.js 15.5.11 with security patches
+  - Fixes critical DoS vulnerabilities in Server Components
+  - Addresses authorization bypass issues in middleware
+  - Patches cache poisoning vulnerabilities
+  - Note: One moderate vulnerability (GHSA-5f7q-jpqc-wp7h) related to experimental PPR feature - not applicable to this application as PPR is not enabled
 - ✅ Respects robots.txt
 - ✅ Rate limiting with caching
 - ✅ Proper error handling
