@@ -321,7 +321,7 @@ This application is for educational purposes only. Please respect kun.uz's terms
 
 For issues, questions, or contributions, please:
 - Open an issue on GitHub
-- Contact: [your-email@example.com]
+- Submit a pull request with improvements
 
 ## Acknowledgments
 

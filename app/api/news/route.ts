@@ -13,6 +13,8 @@ export interface NewsArticle {
 }
 
 // Cache for news articles (simple in-memory cache)
+// Note: In production with multiple serverless instances, consider using Redis or similar
+// For AWS Amplify with single instance, this simple cache is sufficient
 let cachedNews: NewsArticle[] | null = null;
 let cacheTime: number | null = null;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
@@ -76,7 +78,7 @@ async function scrapeKunuzNews(): Promise<NewsArticle[]> {
       // Only add if we have at least a title and URL
       if (title && articleUrl) {
         articles.push({
-          id: `${Date.now()}-${index}`,
+          id: `${Date.now()}-${index}-${Math.random().toString(36).substr(2, 9)}`,
           title,
           summary: summary || 'No description available',
           imageUrl: imageUrl || 'https://placehold.co/600x400?text=Kun.uz+News',
@@ -109,7 +111,7 @@ async function scrapeKunuzNews(): Promise<NewsArticle[]> {
           }
 
           articles.push({
-            id: `${Date.now()}-${index}`,
+            id: `${Date.now()}-${index}-${Math.random().toString(36).substr(2, 9)}`,
             title,
             summary: 'Click to read more...',
             imageUrl: imageUrl || 'https://placehold.co/600x400?text=Kun.uz+News',
