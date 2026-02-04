@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { NewsArticle } from './api/news/route';
 
 // Loading skeleton component
@@ -37,9 +38,11 @@ function NewsCard({ article }: { article: NewsArticle }) {
     <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
       <a href={article.articleUrl} target="_blank" rel="noopener noreferrer">
         <div className="relative h-48 overflow-hidden">
-          <img
+          <Image
             src={article.imageUrl}
             alt={article.title}
+            width={600}
+            height={400}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
             onError={(e) => {
               const target = e.target as HTMLImageElement;

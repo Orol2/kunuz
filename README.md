@@ -142,7 +142,7 @@ Fetches the latest news articles from kun.uz.
 
 3. **Configure build settings**
    
-   Amplify should auto-detect Next.js settings. If not, use:
+   Amplify should auto-detect Next.js settings from the included `amplify.yml` file. The configuration includes:
    
    ```yaml
    version: 1
@@ -161,6 +161,7 @@ Fetches the latest news articles from kun.uz.
      cache:
        paths:
          - node_modules/**/*
+         - .next/cache/**/*
    ```
 
 4. **Deploy**
